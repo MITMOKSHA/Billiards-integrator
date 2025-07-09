@@ -241,7 +241,9 @@ const ScoreBoard: React.FC = () => {
           placeholder="输入玩家昵称"
           value={newPlayerName}
           onChange={(e) => setNewPlayerName(e.target.value)}
+          maxLength={6}
           style={{
+            width: '110px',
             padding: '12px 16px',
             borderRadius: '8px',
             border: '1px solid #ddd',
@@ -298,7 +300,14 @@ const ScoreBoard: React.FC = () => {
           {players.map((player) => (
             <tr key={player.key}>
               <td style={{ padding: '8px', border: '1px solid #ddd' }}>{player.order}</td>
-              <td style={{ padding: '8px', border: '1px solid #ddd', textAlign: 'left' }}>
+              <td
+                style={{
+                  padding: '8px',
+                  border: '1px solid #ddd',
+                  textAlign: 'left',
+                  whiteSpace: 'nowrap',
+                }}
+              >
                 <div
                   style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }}
                 >
@@ -350,9 +359,9 @@ const ScoreBoard: React.FC = () => {
               </td>
               <td style={{ padding: '8px', border: '1px solid #ddd' }}>{player.score}</td>
               <td style={{ padding: '8px', border: '1px solid #ddd' }}>
-                <div style={{ display: 'flex', gap: '8px' }}>
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                   {player.order === 1 && (
-                    <>
+                    <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
                       <button
                         onClick={() => handleBigWin(player.key)}
                         style={{
@@ -362,6 +371,7 @@ const ScoreBoard: React.FC = () => {
                           border: 'none',
                           borderRadius: '4px',
                           transition: 'opacity 0.2s',
+                          minWidth: 'max-content',
                         }}
                         onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                         onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
@@ -379,6 +389,7 @@ const ScoreBoard: React.FC = () => {
                           borderRadius: '4px',
                           marginRight: '4px',
                           transition: 'opacity 0.2s',
+                          minWidth: 'max-content',
                         }}
                         onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                         onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
@@ -395,6 +406,7 @@ const ScoreBoard: React.FC = () => {
                           border: 'none',
                           borderRadius: '4px',
                           transition: 'opacity 0.2s',
+                          minWidth: 'max-content',
                         }}
                         onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                         onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
@@ -402,7 +414,7 @@ const ScoreBoard: React.FC = () => {
                       >
                         黑金
                       </button>
-                    </>
+                    </div>
                   )}
                   <button
                     onClick={() => handleSmallWin(player.key)}
@@ -413,6 +425,7 @@ const ScoreBoard: React.FC = () => {
                       border: 'none',
                       borderRadius: '4px',
                       transition: 'opacity 0.2s',
+                      minWidth: 'max-content',
                     }}
                     onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                     onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
@@ -429,6 +442,7 @@ const ScoreBoard: React.FC = () => {
                       border: '1px solid #d9d9d9',
                       borderRadius: '4px',
                       transition: 'opacity 0.2s',
+                      minWidth: 'max-content',
                     }}
                     onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                     onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
@@ -446,6 +460,7 @@ const ScoreBoard: React.FC = () => {
                       borderRadius: '4px',
                       marginRight: '4px',
                       transition: 'opacity 0.2s',
+                      minWidth: 'max-content',
                     }}
                     onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                     onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
@@ -462,6 +477,7 @@ const ScoreBoard: React.FC = () => {
                       border: 'none',
                       borderRadius: '4px',
                       transition: 'opacity 0.2s',
+                      minWidth: 'max-content',
                     }}
                     onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
                     onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
