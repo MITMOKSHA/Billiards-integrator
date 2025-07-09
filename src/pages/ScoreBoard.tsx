@@ -248,8 +248,12 @@ const ScoreBoard: React.FC = () => {
             backgroundColor: '#1890ff',
             color: 'white',
             border: 'none',
-            borderRadius: '4px',
+            borderRadius: '8px',
+            transition: 'opacity 0.2s',
           }}
+          onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+          onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           添加玩家
         </button>
@@ -260,8 +264,12 @@ const ScoreBoard: React.FC = () => {
             backgroundColor: '#ff4d4f',
             color: 'white',
             border: 'none',
-            borderRadius: '4px',
+            borderRadius: '8px',
+            transition: 'opacity 0.2s',
           }}
+          onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+          onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           重置分数
         </button>
@@ -285,25 +293,33 @@ const ScoreBoard: React.FC = () => {
                 <button
                   onClick={() => movePlayerUp(player.key)}
                   style={{
-                    padding: '2px 20px',
+                    padding: '2px 10px',
                     backgroundColor: '#13c2c2',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
                     marginRight: '4px',
+                    transition: 'opacity 0.2s',
                   }}
+                  onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                  onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                 >
                   ↑
                 </button>
                 <button
                   onClick={() => movePlayerDown(player.key)}
                   style={{
-                    padding: '2px 20px',
+                    padding: '2px 10px',
                     backgroundColor: '#13c2c2',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
+                    transition: 'opacity 0.2s',
                   }}
+                  onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                  onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                 >
                   ↓
                 </button>
@@ -321,7 +337,11 @@ const ScoreBoard: React.FC = () => {
                           color: 'white',
                           border: 'none',
                           borderRadius: '4px',
+                          transition: 'opacity 0.2s',
                         }}
+                        onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                        onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                        onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                       >
                         大金
                       </button>
@@ -334,7 +354,11 @@ const ScoreBoard: React.FC = () => {
                           border: 'none',
                           borderRadius: '4px',
                           marginRight: '4px',
+                          transition: 'opacity 0.2s',
                         }}
+                        onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                        onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                        onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                       >
                         黄金九
                       </button>
@@ -346,7 +370,11 @@ const ScoreBoard: React.FC = () => {
                           color: 'white',
                           border: 'none',
                           borderRadius: '4px',
+                          transition: 'opacity 0.2s',
                         }}
+                        onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                        onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                        onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                       >
                         黑金
                       </button>
@@ -360,7 +388,11 @@ const ScoreBoard: React.FC = () => {
                       color: 'white',
                       border: 'none',
                       borderRadius: '4px',
+                      transition: 'opacity 0.2s',
                     }}
+                    onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                    onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                   >
                     小金
                   </button>
@@ -372,7 +404,11 @@ const ScoreBoard: React.FC = () => {
                       color: '#333',
                       border: '1px solid #d9d9d9',
                       borderRadius: '4px',
+                      transition: 'opacity 0.2s',
                     }}
+                    onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                    onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                   >
                     普胜
                   </button>
@@ -385,7 +421,11 @@ const ScoreBoard: React.FC = () => {
                       border: 'none',
                       borderRadius: '4px',
                       marginRight: '4px',
+                      transition: 'opacity 0.2s',
                     }}
+                    onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                    onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                   >
                     犯规
                   </button>
@@ -397,7 +437,11 @@ const ScoreBoard: React.FC = () => {
                       color: 'white',
                       border: 'none',
                       borderRadius: '4px',
+                      transition: 'opacity 0.2s',
                     }}
+                    onMouseDown={(e) => (e.currentTarget.style.opacity = '0.5')}
+                    onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                   >
                     让球得分
                   </button>
