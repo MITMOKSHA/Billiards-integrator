@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import arrowUp from '../asset/image/Arrow_top.png';
+import arrowDown from '../asset/image/Arrow_down.png';
 
 interface Player {
   key: string;
@@ -236,10 +238,18 @@ const ScoreBoard: React.FC = () => {
       <div style={{ marginBottom: '16px', display: 'flex', gap: '8px' }}>
         <input
           type="text"
-          placeholder="输入玩家姓名"
+          placeholder="输入玩家昵称"
           value={newPlayerName}
           onChange={(e) => setNewPlayerName(e.target.value)}
-          style={{ padding: '8px', marginRight: '8px' }}
+          style={{
+            padding: '12px 16px',
+            borderRadius: '8px',
+            border: '1px solid #ddd',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            fontSize: '16px',
+            transition: 'all 0.3s ease',
+            marginRight: '8px',
+          }}
         />
         <button
           onClick={addPlayer}
@@ -289,12 +299,15 @@ const ScoreBoard: React.FC = () => {
             <tr key={player.key}>
               <td style={{ padding: '8px', border: '1px solid #ddd' }}>{player.order}</td>
               <td style={{ padding: '8px', border: '1px solid #ddd', textAlign: 'left' }}>
-                <div style={{ display: 'inline-block', marginRight: '8px' }}>{player.name}</div>
+                <div
+                  style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }}
+                >
+                  {player.name}
+                </div>
                 <button
                   onClick={() => movePlayerUp(player.key)}
                   style={{
-                    padding: '2px 10px',
-                    backgroundColor: '#13c2c2',
+                    padding: '2px 5px',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
@@ -305,13 +318,18 @@ const ScoreBoard: React.FC = () => {
                   onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
                   onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                 >
-                  ↑
+                  <img
+                    src={arrowUp}
+                    alt="按钮图标"
+                    width={20}
+                    height={20}
+                    style={{ verticalAlign: 'middle' }}
+                  ></img>
                 </button>
                 <button
                   onClick={() => movePlayerDown(player.key)}
                   style={{
-                    padding: '2px 10px',
-                    backgroundColor: '#13c2c2',
+                    padding: '2px 5px',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
@@ -321,7 +339,13 @@ const ScoreBoard: React.FC = () => {
                   onMouseUp={(e) => (e.currentTarget.style.opacity = '1')}
                   onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                 >
-                  ↓
+                  <img
+                    src={arrowDown}
+                    alt="按钮图标"
+                    width={20}
+                    height={20}
+                    style={{ verticalAlign: 'middle' }}
+                  ></img>
                 </button>
               </td>
               <td style={{ padding: '8px', border: '1px solid #ddd' }}>{player.score}</td>
@@ -495,6 +519,10 @@ const ScoreBoard: React.FC = () => {
           <li>
             <strong>黄金九</strong>：一般指开球将 9 号球打进。出现黄金九时，击球者赢 n * 4
             分，其余玩家扣分
+          </li>
+          <li>
+            <strong>黑金</strong>：一般指开球将 9 号球和白球都同时打进。出现黑金时，击球者输 n * 4
+            分，其余玩家得分
           </li>
           <li>
             <strong>普胜</strong>：指大金、小金、黄金九未列明的其他胜局。通常是对手没有打进 9
