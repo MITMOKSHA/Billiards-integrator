@@ -259,37 +259,38 @@ const ScoreBoard: React.FC = () => {
            {players.map(player => (
              <tr key={player.key}>
                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{player.order}</td>
-<td style={{ padding: '8px', border: '1px solid #ddd', textAlign: 'left' }}>
-  <div style={{ display: 'inline-block', marginRight: '8px' }}>{player.name}</div>
-  <button 
-    onClick={() => movePlayerUp(player.key)}
-    style={{ 
-      padding: '2px 20px', 
-      backgroundColor: '#13c2c2', 
-      color: 'white', 
-      border: 'none', 
-      borderRadius: '4px',
-      marginRight: '4px'
-    }}
-  >
-    ↑
-  </button>
-  <button 
-    onClick={() => movePlayerDown(player.key)}
-    style={{ 
-      padding: '2px 20px', 
-      backgroundColor: '#13c2c2', 
-      color: 'white', 
-      border: 'none', 
-      borderRadius: '4px'
-    }}
-  >
-    ↓
-  </button>
-</td>
+          <td style={{ padding: '8px', border: '1px solid #ddd', textAlign: 'left' }}>
+            <div style={{ display: 'inline-block', marginRight: '8px' }}>{player.name}</div>
+            <button 
+              onClick={() => movePlayerUp(player.key)}
+              style={{ 
+                padding: '2px 20px', 
+                backgroundColor: '#13c2c2', 
+                color: 'white', 
+                border: 'none', 
+                borderRadius: '4px',
+                marginRight: '4px'
+              }}
+            >
+              ↑
+            </button>
+            <button 
+              onClick={() => movePlayerDown(player.key)}
+              style={{ 
+                padding: '2px 20px', 
+                backgroundColor: '#13c2c2', 
+                color: 'white', 
+                border: 'none', 
+                borderRadius: '4px'
+              }}
+            >
+              ↓
+            </button>
+          </td>
                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{player.score}</td>
                <td style={{ padding: '8px', border: '1px solid #ddd' }}>
                  <div style={{ display: 'flex', gap: '8px' }}>
+                  {player.order === 1? 
                    <button 
                      onClick={() => handleBigWin(player.key)}
                      style={{ 
@@ -302,6 +303,8 @@ const ScoreBoard: React.FC = () => {
                    >
                      大金
                    </button>
+                   : <></>
+                  }
                    <button 
                      onClick={() => handleSmallWin(player.key)}
                      style={{ 
@@ -314,18 +317,21 @@ const ScoreBoard: React.FC = () => {
                    >
                      小金
                    </button>
-                   <button 
-                     onClick={() => handleGoldenNine(player.key)}
-                     style={{ 
-                       padding: '4px 8px', 
-                       backgroundColor: '#ffc53d', 
-                       color: 'white', 
-                       border: 'none', 
-                       borderRadius: '4px'
-                     }}
-                   >
-                     黄金九
-                   </button>
+                   {player.order === 1? 
+                    <button 
+                      onClick={() => handleGoldenNine(player.key)}
+                      style={{ 
+                        padding: '4px 8px', 
+                        backgroundColor: '#ffc53d', 
+                        color: 'white', 
+                        border: 'none', 
+                        borderRadius: '4px'
+                      }}
+                    >
+                      黄金九
+                    </button>
+                    : <></>
+                   }
                    <button 
                      onClick={() => handleNormalWin(player.key)}
                      style={{ 
